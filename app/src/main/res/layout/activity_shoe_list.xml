@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+<!--  I used scroll View to make the view scrollable -->
+<androidx.constraintlayout.widget.ConstraintLayout
+
+  android:background="#9ed79a"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" >
+
+  <ScrollView
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ShoeListFragment">
+
+<!--I used Linear Layout Cause we are just adding cardView vertically on each other -->
+    <LinearLayout
+      android:id="@+id/ShoesLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+
+    </LinearLayout>
+  </ScrollView>
+
+  <Button
+    android:id="@+id/AddShoeButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Add Shoe"
+    android:textColor="@android:color/black"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.97"
+    app:layout_constraintStart_toStartOf="parent"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

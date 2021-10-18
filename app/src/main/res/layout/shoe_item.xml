@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Used CardView to hold some attributes of the shoe Object
+Used Constraint Layout inside cause its complex View-->
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <data>
+    <variable
+      name="viewmodel"
+      type="com.udacity.shoestore.ShoeViewModel" />
+  </data>
+<com.google.android.material.card.MaterialCardView
+android:id="@+id/cardView"
+  android:layout_width="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+
+  android:layout_height="wrap_content">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+      android:id="@+id/ShoeName"
+
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="16dp"
+      android:layout_marginBottom="16dp"
+      android:text="@={viewmodel.shoe.name}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+      app:layout_constraintEnd_toStartOf="@+id/ShoePrice"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/ShoePrice"
+      android:layout_width="wrap_content"
+      android:textStyle="bold"
+      android:textColor="@android:color/black"
+      android:layout_height="wrap_content"
+      android:hint="124"
+      android:text="@={viewmodel.shoe.size}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintBottom_toBottomOf="@+id/ShoeName"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/ShoeName" />
+
+    <TextView
+      android:id="@+id/ShoeDescription"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="16dp"
+      android:text="@={viewmodel.shoe.description}"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textColor="@android:color/black"
+      android:layout_marginTop="16dp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="@+id/ShoeName"
+      app:layout_constraintStart_toStartOf="@id/ShoeName"
+      app:layout_constraintTop_toBottomOf="@+id/ShoeName"></TextView>
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+</layout>

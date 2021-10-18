@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  I Used Constraint layout cause i am familiar with it
+but as the view not complex i could have used linear layout -->
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <data>
+    <variable
+      name="viewmodel"
+      type="com.udacity.shoestore.ShoeViewModel" />
+  </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  style="@style/Theme.AppCompat.Light.NoActionBar">
+
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/DescriptionContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:layout_constraintEnd_toEndOf="@id/SizeContainer"
+    app:layout_constraintStart_toStartOf="@+id/SizeContainer"
+    app:layout_constraintTop_toBottomOf="@id/SizeContainer">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/DescriptionText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Description"
+      android:text="@={viewmodel.shoe.description}"></com.google.android.material.textfield.TextInputEditText>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/ShoeNameContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/NameText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@={viewmodel.shoe.name}"
+      android:hint="Name"></com.google.android.material.textfield.TextInputEditText>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/SizeContainer"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="@id/ShoeNameContainer"
+    app:layout_constraintStart_toStartOf="@id/ShoeNameContainer"
+    app:layout_constraintTop_toBottomOf="@+id/ShoeNameContainer">
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/SizeText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@={viewmodel.shoe.size}"
+      android:hint="Size"></com.google.android.material.textfield.TextInputEditText>
+
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/AddButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Add"
+    app:layout_constraintEnd_toEndOf="@+id/DescriptionContainer"
+    app:layout_constraintStart_toStartOf="@+id/DescriptionContainer"
+    app:layout_constraintTop_toBottomOf="@+id/DescriptionContainer" />
+  <Button
+    android:id="@+id/CancelButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:text="Cancel"
+    app:layout_constraintEnd_toEndOf="@+id/AddButton"
+    app:layout_constraintStart_toStartOf="@+id/AddButton"
+    app:layout_constraintTop_toBottomOf="@+id/AddButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

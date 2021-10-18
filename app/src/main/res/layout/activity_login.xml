@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+<!--  I made Constraint Layout cause i want it to each input field follow constraint and moving with each other-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  style="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context=".LoginFragment">
+
+  <TextView
+    android:id="@+id/WelcomeTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Welcome!"
+    android:textSize="40sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/EmailContainer"/>
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/EmailContainer"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_margin="16dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/WelcomeTextView"
+    app:layout_constraintStart_toStartOf="@+id/WelcomeTextView"
+    app:layout_constraintTop_toTopOf="parent">
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/EmailText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Email"></com.google.android.material.textfield.TextInputEditText>
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/PasswordContainer"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:passwordToggleEnabled="true"
+    android:layout_marginTop="8dp"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    app:layout_constraintEnd_toEndOf="@+id/EmailContainer"
+    app:layout_constraintStart_toStartOf="@+id/EmailContainer"
+    app:layout_constraintTop_toBottomOf="@+id/EmailContainer"
+
+    >
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/PasswordText"
+      android:layout_width="match_parent"
+      android:inputType="textPassword"
+
+      android:layout_height="wrap_content"
+      android:hint="Password"></com.google.android.material.textfield.TextInputEditText>
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+
+  <Button
+    android:id="@+id/LoginButton"
+    android:layout_marginTop="8dp"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:background="#000000"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@+id/PasswordContainer"
+    app:layout_constraintEnd_toEndOf="@+id/PasswordContainer"
+    app:layout_constraintTop_toBottomOf="@+id/PasswordContainer"
+    android:hint="Login"
+    android:textColorHint="@android:color/white"
+
+    ></Button>
+  <Button
+    android:id="@+id/SignUp"
+    android:layout_marginTop="8dp"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:background="#000000"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@+id/LoginButton"
+    app:layout_constraintEnd_toEndOf="@+id/LoginButton"
+    app:layout_constraintTop_toBottomOf="@+id/LoginButton"
+    android:hint="Sign Up"
+    android:textColorHint="@android:color/white"
+
+    ></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
