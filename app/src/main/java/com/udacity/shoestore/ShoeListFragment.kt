@@ -47,9 +47,7 @@ class ShoeListFragment : Fragment() {
       for (Shoe in it){
         val shoeitemBinding: ShoeItemBinding =
           ShoeItemBinding.inflate(LayoutInflater.from(activity))
-        shoeitemBinding.ShoeName.text = Shoe.name
-        shoeitemBinding.ShoePrice.text = Shoe.size
-        shoeitemBinding.ShoeDescription.text = Shoe.description
+       shoeitemBinding.shoe =Shoe
 
         LinearLayout.addView(shoeitemBinding.root)
 

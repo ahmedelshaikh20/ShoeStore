@@ -46,7 +46,6 @@ setUpSharedPreference()
   private fun clickListeners() {
     binding.LoginButton.setOnClickListener {
       if(binding.EmailText.text!!.isNotEmpty() && binding.PasswordText.text!!.isNotEmpty()){
-        Toast.makeText(activity , "One of the Fields are missing",Toast.LENGTH_SHORT).show()
         it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
 
       }
@@ -54,7 +53,6 @@ setUpSharedPreference()
 
     binding.SignUp.setOnClickListener {
       if(binding.EmailText.text!!.isNotEmpty() && binding.PasswordText.text!!.isNotEmpty()){
-        Toast.makeText(activity , "One of the Fields are missing",Toast.LENGTH_SHORT).show()
         it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
 
       }

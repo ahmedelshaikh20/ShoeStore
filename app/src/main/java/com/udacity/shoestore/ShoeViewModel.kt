@@ -1,13 +1,13 @@
 package com.udacity.shoestore
 
-import android.provider.ContactsContract
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
+import kotlin.collections.ArrayList
 
-class ShoeViewModel : ViewModel() {
+class ShoeViewModel : ViewModel()  {
 
 //current shoe
   private val _shoe=MutableLiveData<Shoe>()
